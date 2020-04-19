@@ -19,21 +19,7 @@ namespace Controllers
           //  this.encryptionService = encryptionService;
         }
 
-        /*public List<User> GetList()
-        {
-            List<User> result = context.Users.Select(rec => new User
-            {
-                Id = rec.Id,
-                FIO = rec.FIO,
-                Login = rec.Login,
-                Password = rec.Password,
-                Email = rec.Email,
-                Status = rec.Status
-            })
-            .ToList();
-            return result;
-        } */
-       /* public User GetElement(int id)
+        public User GetElement(int id)
         {
             User element = context.Users.FirstOrDefault(rec => rec.Id == id);
             if (element != null)
@@ -45,19 +31,11 @@ namespace Controllers
                     Login = element.Login,
                     Password = element.Password,
                     Email = element.Email,
-                    Status = element.Status,
-                    PasswordGroups = context.PasswordGroups
-                 .Where(recPG => recPG.UserId == element.Id)
-                 .Select(recPG => new PasswordGroup
-                 {
-                     Id = recPG.Id,
-                     GroupName = recPG.GroupName
-                 })
-                 .ToList(),
+                    Authentication = element.Authentication
                 };
             }
             throw new Exception("Элемент не найден");
-        } */
+        }
 
         public User GetElement(string login, string password)
         {
@@ -72,6 +50,7 @@ namespace Controllers
                     Login = element.Login,
                     Password = element.Password,
                     Email = element.Email,
+                    Authentication = element.Authentication,
                     Status = element.Status
                 };
             }
@@ -92,7 +71,8 @@ namespace Controllers
                 Login = model.Login,
                 Password = model.Password,
                 Email = model.Email,
-                Status = model.Status
+                Status = model.Status,
+                Authentication = true
             };
             context.Users.Add(element);
             context.SaveChanges();
@@ -100,7 +80,7 @@ namespace Controllers
 
         public void UpdElement(User model)
         {
-            User element = context.Users.FirstOrDefault(rec => rec.FIO == model.FIO || rec.Login == model.Login && rec.Id != model.Id);
+            User element = context.Users.FirstOrDefault(rec => (rec.FIO == model.FIO || rec.Login == model.Login) && rec.Id != model.Id);
             if (element != null)
             {
                 throw new Exception("Уже есть пользователь с таким логином или ФИО");
@@ -114,7 +94,7 @@ namespace Controllers
             element.Login = model.Login;
             element.Password = model.Password;
             element.Email = model.Email;
-            element.Status = model.Status;
+            element.Authentication = model.Authentication;
             context.SaveChanges();
         }
         public void ActivateAccount(User model)

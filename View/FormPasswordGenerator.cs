@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Unity;
 
-namespace ViewAuthorization
+namespace View
 {
     public partial class FormPasswordGenerator : Form
     {

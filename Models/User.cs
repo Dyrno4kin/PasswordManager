@@ -11,6 +11,8 @@ namespace Models
         public string Password { get; set; }
         public string Email { get; set; }
         public bool Status { get; set; }
+        public bool Authentication { get; set; }
+
         [ForeignKey("UserId")]
         public virtual List<PasswordGroup> PasswordGroups { get; set; }
     }

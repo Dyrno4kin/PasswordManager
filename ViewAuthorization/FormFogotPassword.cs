@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Unity;
+using View;
 
 namespace ViewAuthorization
 {
@@ -80,11 +81,11 @@ namespace ViewAuthorization
             {
                 userController.ResetPassword(textBoxLogin.Text, textBoxEmail.Text);
                 Close();
-                MyMessageBox.ShowMessage("Пароль отправлен на почту: "+textBoxEmail.Text, "Message", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MyMessageBox.ShowMessage("Пароль отправлен на почту: "+textBoxEmail.Text, "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Question);
             }
             catch
             {
-                MyMessageBox.ShowMessage("Неверный логин или Email", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Неверный логин или Email", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

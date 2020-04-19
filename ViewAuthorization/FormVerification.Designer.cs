@@ -62,7 +62,10 @@
             // 
             this.buttonUpdateCode.BackgroundImage = global::ViewAuthorization.Properties.Resources.update;
             this.buttonUpdateCode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonUpdateCode.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.buttonUpdateCode.FlatAppearance.BorderSize = 0;
+            this.buttonUpdateCode.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonUpdateCode.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.buttonUpdateCode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdateCode.Image = global::ViewAuthorization.Properties.Resources.update;
             this.buttonUpdateCode.Location = new System.Drawing.Point(283, 77);

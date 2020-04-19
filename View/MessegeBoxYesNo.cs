@@ -1,19 +1,21 @@
 ﻿using System.Drawing;
 using System.Windows.Forms;
 
-namespace ViewAuthorization
+namespace View
 {
-    public partial class MessegeBoxOk : Form
+    public partial class MessegeBoxYesNo : Form
     {
-        public MessegeBoxOk()
+        public MessegeBoxYesNo()
         {
             InitializeComponent();
         }
+
         public Image MessageIcon
         {
             get { return pictureBox.Image; }
             set { pictureBox.Image = value; }
         }
+
         public string Message
         {
             get { return textBoxMessage.Text; }

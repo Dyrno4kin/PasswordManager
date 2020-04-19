@@ -4,6 +4,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Unity;
+using View;
 
 namespace ViewAuthorization
 {
@@ -103,35 +104,68 @@ namespace ViewAuthorization
         {
             if (textBoxLogin.Text == "Login")
             {
-                MyMessageBox.ShowMessage("Заполните логин", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Заполните логин", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (textBoxPass.Text == "Password")
             {
-                MyMessageBox.ShowMessage("Заполните пароль", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Заполните пароль", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             try
             {
                 User view = userService.GetElement(textBoxLogin.Text, textBoxPass.Text);
-                var form = Container.Resolve<FormVerification>();
-                if (view.Status == false)
+                
+                if (!view.Authentication)
                 {
-                    MyMessageBox.ShowMessage("Учетная запись не активированна, пожалуйста активируйте учетную запись с помощью кода отправленного на почту", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    form.Registration = true;
-                }            
-                form.Id = view.Id;
-                form.Email = view.Email;
-                form.FIO = view.FIO;
-                form.ShowDialog();
+                    var form = Container.Resolve<FormMain>();
+                    form.id = view.Id;
+                    MyMessageBox.ShowMessage("Добрый день " + view.FIO + "!", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    this.Visible = false;
+                    form.ShowDialog();
+                    this.Visible = true;
+                }
+                else
+                {
+                    var form = Container.Resolve<FormVerification>();
+                    if (view.Status == false)
+                    {
+                        MyMessageBox.ShowMessage("Учетная запись не активированна, пожалуйста активируйте учетную запись с помощью кода отправленного на почту", "Message",26, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        form.Registration = true;
+                    }
+                    this.Visible = false;
+                    form.Id = view.Id;
+                    form.Email = view.Email;
+                    form.FIO = view.FIO;
+                    form.ShowDialog();
+                    this.Visible = true;
+                }
+                
             }
             catch (Exception)
             {
-                MyMessageBox.ShowMessage("Неверный логин или пароль", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Неверный логин или пароль", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             textBoxLogin.Text = "Login";
             textBoxPass.Text = "Password";
             return;
+        }
+
+        bool btn_flag = false;
+        private void buttonPassChar_Click(object sender, EventArgs e)
+        {
+            if (!btn_flag)
+            {
+                textBoxPass.UseSystemPasswordChar = false;
+                btn_flag = true;
+                buttonPassChar.BackgroundImage = Properties.Resources.noeye;
+            }
+            else
+            {
+                textBoxPass.UseSystemPasswordChar = true;
+                btn_flag = false;
+                buttonPassChar.BackgroundImage = Properties.Resources.eye;
+            }
         }
     }
 }

@@ -1,20 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using Controllers;
+using Models;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Unity;
 
 namespace View
 {
     public partial class FormGroup : Form
     {
-        public FormGroup()
+        [Dependency]
+        public new IUnityContainer Container { get; set; }
+        public int userId { set; get; }
+        public int Id { set { id = value; } }
+        private int? id;
+        private readonly GroupController groupService;
+
+        public FormGroup(GroupController groupService)
         {
             InitializeComponent();
+            this.groupService = groupService;
+        }
+        private void FormGroup_Load(object sender, EventArgs e)
+        {
+            labelGroupUp.Text = "Add User";
+            textBoxGroupName.Text = "Group name";
+            if (id.HasValue)
+            {
+                labelGroupUp.Text = "Edit User";
+                PasswordGroup passwordGroup = groupService.GetElement(id.Value);
+                textBoxGroupName.Text = passwordGroup.GroupName;
+            }
+
         }
 
         #region UpPanel
@@ -62,9 +79,41 @@ namespace View
         
         #endregion
 
-        private void panelMain_Paint(object sender, PaintEventArgs e)
-        {
 
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+            if (textBoxGroupName.Text == "Group name")
+            {
+                MyMessageBox.ShowMessage("Заполните название группы", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            try
+            {
+                if (id.HasValue)
+                {
+                    groupService.UpdElement(new PasswordGroup
+                    {
+                        Id = id.Value,
+                        UserId = userId,
+                        GroupName = textBoxGroupName.Text
+                    });
+                }
+                else
+                {
+                    groupService.AddElement(new PasswordGroup
+                    {
+                        UserId = userId,
+                        GroupName = textBoxGroupName.Text
+                    });
+                }
+                
+                MyMessageBox.ShowMessage("Сохранение прошло успешно", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Question);
+                Close();
+            }
+            catch (Exception)
+            {
+                MyMessageBox.ShowMessage("Такая группа уже существует", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Unity;
+using View;
 
 namespace ViewAuthorization
 {
@@ -117,27 +118,27 @@ namespace ViewAuthorization
         {
             if (textBoxFIO.Text == "Full name")
             {
-                MyMessageBox.ShowMessage("Заполните ФИО", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Заполните ФИО", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (textBoxLogin.Text == "Login")
             {
-                MyMessageBox.ShowMessage("Заполните логин", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Заполните логин", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (textBoxPass.Text == "Password")
             {
-                MyMessageBox.ShowMessage("Придумайте пароль", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Придумайте пароль", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (textBoxEmail.Text == "Email")
             {
-                MyMessageBox.ShowMessage("Заполните Email", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Заполните Email", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            if (Regex.IsMatch(textBoxEmail.Text, @"^[.\\-_a-z0-9]+@([a-z0-9][\\-a-z0-9]+\\.)+[a-z]{2,6}"))
+            if (!Regex.IsMatch(textBoxEmail.Text, @"^[a-zA-Z0-9_.+-]+\@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"))
             {
-                MyMessageBox.ShowMessage("Неверный формат электронной почты", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Неверный формат электронной почты", "Message", 60, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             if (Regex.IsMatch(textBoxPass.Text, @"^(?=.*[a-z])(?=.*[0-9])\S{8,26}$"))
@@ -152,7 +153,7 @@ namespace ViewAuthorization
                         Email = textBoxEmail.Text,
                         Status = false
                     });
-                    MyMessageBox.ShowMessage("Регистрация прошла успешно, активируйте учетную запись с помощью кода отправленного на почту", "Message", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    MyMessageBox.ShowMessage("Регистрация прошла успешно, активируйте учетную запись с помощью кода отправленного на почту", "Message",30, MessageBoxButtons.OK, MessageBoxIcon.Question);
                     User view = userService.GetElement(textBoxLogin.Text, textBoxPass.Text);
                     var form = Container.Resolve<FormVerification>();
                     form.Id = view.Id;
@@ -169,7 +170,7 @@ namespace ViewAuthorization
             }
             else
             {
-                MyMessageBox.ShowMessage("Пароль должен содержать от 8 до 26 символов и включать в себя символы и цифры", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Пароль должен содержать от 8 до 26 символов и включать в себя символы и цифры", "Message",30, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }      
         }

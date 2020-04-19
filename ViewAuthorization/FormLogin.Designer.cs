@@ -38,6 +38,7 @@
             this.panelLine2 = new System.Windows.Forms.Panel();
             this.panelLine1 = new System.Windows.Forms.Panel();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
+            this.buttonPassChar = new System.Windows.Forms.Button();
             this.labelSkip = new System.Windows.Forms.Label();
             this.labelExit = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
@@ -53,6 +54,7 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.panelMain.Controls.Add(this.buttonPassChar);
             this.panelMain.Controls.Add(this.textBoxPass);
             this.panelMain.Controls.Add(this.buttonFogot);
             this.panelMain.Controls.Add(this.panelCap);
@@ -88,7 +90,10 @@
             // 
             // buttonFogot
             // 
+            this.buttonFogot.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.buttonFogot.FlatAppearance.BorderSize = 0;
+            this.buttonFogot.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonFogot.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.buttonFogot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFogot.Font = new System.Drawing.Font("Arial", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonFogot.ForeColor = System.Drawing.Color.White;
@@ -169,6 +174,22 @@
             this.textBoxLogin.Text = "Login";
             this.textBoxLogin.Enter += new System.EventHandler(this.textBoxLogin_Enter);
             this.textBoxLogin.Leave += new System.EventHandler(this.textBoxLogin_Leave);
+            // 
+            // buttonPassChar
+            // 
+            this.buttonPassChar.BackgroundImage = global::ViewAuthorization.Properties.Resources.eye;
+            this.buttonPassChar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonPassChar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonPassChar.FlatAppearance.BorderSize = 0;
+            this.buttonPassChar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonPassChar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonPassChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPassChar.Location = new System.Drawing.Point(320, 294);
+            this.buttonPassChar.Name = "buttonPassChar";
+            this.buttonPassChar.Size = new System.Drawing.Size(28, 28);
+            this.buttonPassChar.TabIndex = 1017;
+            this.buttonPassChar.UseVisualStyleBackColor = false;
+            this.buttonPassChar.Click += new System.EventHandler(this.buttonPassChar_Click);
             // 
             // labelSkip
             // 
@@ -267,5 +288,6 @@
         private System.Windows.Forms.Button buttonFogot;
         private System.Windows.Forms.Label labelSkip;
         private System.Windows.Forms.TextBox textBoxPass;
+        private System.Windows.Forms.Button buttonPassChar;
     }
 }

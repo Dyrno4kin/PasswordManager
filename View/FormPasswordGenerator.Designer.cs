@@ -1,4 +1,4 @@
-﻿namespace ViewAuthorization
+﻿namespace View
 {
     partial class FormPasswordGenerator
     {
@@ -28,9 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelCap = new System.Windows.Forms.Panel();
             this.labelSkip = new System.Windows.Forms.Label();
+            this.labelExit = new System.Windows.Forms.Label();
             this.labelCurrentValue = new System.Windows.Forms.Label();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.buttonGenerate = new System.Windows.Forms.Button();
@@ -39,8 +41,7 @@
             this.lowercaseBox = new System.Windows.Forms.CheckBox();
             this.uppercaseBox = new System.Windows.Forms.CheckBox();
             this.textBoxPass = new System.Windows.Forms.TextBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip();
-            this.labelExit = new System.Windows.Forms.Label();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.panelMain.SuspendLayout();
             this.panelCap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
@@ -83,13 +84,27 @@
             this.labelSkip.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelSkip.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelSkip.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelSkip.Image = global::ViewAuthorization.Properties.Resources.minus;
+            this.labelSkip.Image = global::View.Properties.Resources.minus;
             this.labelSkip.Location = new System.Drawing.Point(374, 4);
             this.labelSkip.Name = "labelSkip";
             this.labelSkip.Size = new System.Drawing.Size(17, 20);
             this.labelSkip.TabIndex = 9;
             this.labelSkip.Text = "  ";
             this.labelSkip.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // labelExit
+            // 
+            this.labelExit.AutoSize = true;
+            this.labelExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.labelExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.labelExit.ForeColor = System.Drawing.Color.White;
+            this.labelExit.Image = global::View.Properties.Resources.close;
+            this.labelExit.Location = new System.Drawing.Point(395, 4);
+            this.labelExit.Name = "labelExit";
+            this.labelExit.Size = new System.Drawing.Size(25, 20);
+            this.labelExit.TabIndex = 8;
+            this.labelExit.Text = "    ";
+            this.labelExit.Click += new System.EventHandler(this.labelExit_Click);
             // 
             // labelCurrentValue
             // 
@@ -202,20 +217,6 @@
             // 
             this.toolTip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.toolTip1.ForeColor = System.Drawing.Color.White;
-            // 
-            // labelExit
-            // 
-            this.labelExit.AutoSize = true;
-            this.labelExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.labelExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelExit.ForeColor = System.Drawing.Color.White;
-            this.labelExit.Image = global::ViewAuthorization.Properties.Resources.close;
-            this.labelExit.Location = new System.Drawing.Point(395, 4);
-            this.labelExit.Name = "labelExit";
-            this.labelExit.Size = new System.Drawing.Size(25, 20);
-            this.labelExit.TabIndex = 8;
-            this.labelExit.Text = "    ";
-            this.labelExit.Click += new System.EventHandler(this.labelExit_Click);
             // 
             // FormPasswordGenerator
             // 

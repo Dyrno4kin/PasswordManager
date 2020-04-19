@@ -83,7 +83,10 @@
             // 
             // buttonGeneratePassword
             // 
+            this.buttonGeneratePassword.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.buttonGeneratePassword.FlatAppearance.BorderSize = 0;
+            this.buttonGeneratePassword.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonGeneratePassword.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.buttonGeneratePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonGeneratePassword.Font = new System.Drawing.Font("Arial", 8.830189F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonGeneratePassword.ForeColor = System.Drawing.Color.White;

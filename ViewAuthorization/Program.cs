@@ -29,6 +29,10 @@ namespace ViewAuthorization
            HierarchicalLifetimeManager());
             currentContainer.RegisterType<PasswordGeneratorController>(new
            HierarchicalLifetimeManager());
+            currentContainer.RegisterType<UserController>(new
+           HierarchicalLifetimeManager());
+            currentContainer.RegisterType<SendEmailController>(new
+           HierarchicalLifetimeManager());
             return currentContainer;
         }
     }

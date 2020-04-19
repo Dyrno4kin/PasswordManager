@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace ViewAuthorization
+﻿namespace View
 {
-    partial class MessegeBoxOk
+    partial class MessegeBoxYesNo
     {
         /// <summary>
         /// Required designer variable.
@@ -33,6 +31,7 @@ namespace ViewAuthorization
             this.buttonOk = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonNo = new System.Windows.Forms.Button();
             this.textBoxMessage = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.panel1.SuspendLayout();
@@ -41,20 +40,19 @@ namespace ViewAuthorization
             // buttonOk
             // 
             this.buttonOk.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(177)))), ((int)(((byte)(146)))));
-            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.buttonOk.DialogResult = System.Windows.Forms.DialogResult.Yes;
             this.buttonOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonOk.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonOk.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.buttonOk.Location = new System.Drawing.Point(123, 117);
+            this.buttonOk.Location = new System.Drawing.Point(53, 117);
             this.buttonOk.Name = "buttonOk";
             this.buttonOk.Size = new System.Drawing.Size(92, 31);
             this.buttonOk.TabIndex = 0;
-            this.buttonOk.Text = "Ok";
+            this.buttonOk.Text = "Yes";
             this.buttonOk.UseVisualStyleBackColor = false;
             // 
             // pictureBox
             // 
-            this.pictureBox.Image = global::ViewAuthorization.Properties.Resources.success;
             this.pictureBox.Location = new System.Drawing.Point(21, 36);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(64, 64);
@@ -65,6 +63,7 @@ namespace ViewAuthorization
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.buttonNo);
             this.panel1.Controls.Add(this.textBoxMessage);
             this.panel1.Controls.Add(this.pictureBox);
             this.panel1.Controls.Add(this.buttonOk);
@@ -74,20 +73,35 @@ namespace ViewAuthorization
             this.panel1.Size = new System.Drawing.Size(334, 163);
             this.panel1.TabIndex = 4;
             // 
+            // buttonNo
+            // 
+            this.buttonNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonNo.DialogResult = System.Windows.Forms.DialogResult.No;
+            this.buttonNo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonNo.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonNo.ForeColor = System.Drawing.Color.White;
+            this.buttonNo.Location = new System.Drawing.Point(184, 119);
+            this.buttonNo.Name = "buttonNo";
+            this.buttonNo.Size = new System.Drawing.Size(92, 28);
+            this.buttonNo.TabIndex = 5;
+            this.buttonNo.Text = "No";
+            this.buttonNo.UseVisualStyleBackColor = false;
+            // 
             // textBoxMessage
             // 
             this.textBoxMessage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             this.textBoxMessage.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxMessage.Font = new System.Drawing.Font("Arial", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxMessage.ForeColor = System.Drawing.Color.White;
-            this.textBoxMessage.Location = new System.Drawing.Point(97, 26);
+            this.textBoxMessage.Location = new System.Drawing.Point(97, 56);
             this.textBoxMessage.Multiline = true;
             this.textBoxMessage.Name = "textBoxMessage";
-            this.textBoxMessage.Size = new System.Drawing.Size(223, 85);
+            this.textBoxMessage.ReadOnly = true;
+            this.textBoxMessage.Size = new System.Drawing.Size(223, 47);
             this.textBoxMessage.TabIndex = 4;
             this.textBoxMessage.Text = "Message";
             // 
-            // MessegeBoxOk
+            // MessegeBoxYesNo
             // 
             this.AcceptButton = this.buttonOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -96,7 +110,7 @@ namespace ViewAuthorization
             this.ClientSize = new System.Drawing.Size(334, 163);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MessegeBoxOk";
+            this.Name = "MessegeBoxYesNo";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MessegeBoxOk";
@@ -107,16 +121,12 @@ namespace ViewAuthorization
 
         }
 
-        private void buttonOk_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
-
         #endregion
 
         private System.Windows.Forms.Button buttonOk;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxMessage;
+        private System.Windows.Forms.Button buttonNo;
     }
 }

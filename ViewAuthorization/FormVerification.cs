@@ -79,18 +79,18 @@ namespace ViewAuthorization
                         Id = Id,
                         Status = true
                     });
-                    MyMessageBox.ShowMessage("Активация прошла успешно", "Message", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                    MyMessageBox.ShowMessage("Активация прошла успешно", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Question);
                 }
                 this.Visible = false;
                 var form = Container.Resolve<FormMain>();
                 form.id = Id;
-                MyMessageBox.ShowMessage("Добрый день " + FIO + "!", "Message", MessageBoxButtons.OK, MessageBoxIcon.Question);
+                MyMessageBox.ShowMessage("Добрый день " + FIO + "!", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Question);
                 form.ShowDialog();
                 Close();
             }
             else
             {
-                MyMessageBox.ShowMessage("Неверный код подтверждения, попробуйте еще раз", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MyMessageBox.ShowMessage("Неверный код подтверждения, попробуйте еще раз", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
