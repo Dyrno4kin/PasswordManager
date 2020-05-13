@@ -5,6 +5,7 @@ namespace Controllers
 {
     public class PasswordGeneratorController
     {
+
         public string generatePassword(bool useUpperLetters, bool useSmallLetters, bool useNumbers, bool useSymbols, int passLength)
         {
             Random random = new Random();

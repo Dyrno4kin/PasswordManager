@@ -7,16 +7,19 @@ namespace Controllers
     public class UserController
     {
         private PIDbContext context;
-        // private readonly EncryptionController encryptionService;
+
+        private readonly EncryptionController encryptionService;
+
         private readonly SendEmailController sendEmailController;
+
         private readonly PasswordGeneratorController passwordGeneratorController;
 
-        public UserController(PIDbContext context, SendEmailController sendEmailController, PasswordGeneratorController passwordGeneratorController /*, EncryptionController encryptionService*/)
+        public UserController(PIDbContext context, SendEmailController sendEmailController, PasswordGeneratorController passwordGeneratorController, EncryptionController encryptionService)
         {
             this.context = context;
             this.sendEmailController = sendEmailController;
             this.passwordGeneratorController = passwordGeneratorController;
-          //  this.encryptionService = encryptionService;
+            this.encryptionService = encryptionService;
         }
 
         public User GetElement(int id)
@@ -39,7 +42,6 @@ namespace Controllers
 
         public User GetElement(string login, string password)
         {
-           // string pass = encryptionService.Encrypt("Login", password);
             User element = context.Users.FirstOrDefault(rec => rec.Login == login && rec.Password == password);
             if (element != null)
             {
@@ -57,7 +59,6 @@ namespace Controllers
             throw new Exception("Неверный логин или пароль");
         }
 
-        //Сделать шифрование всех элементов при записи в бд
         public void AddElement(User model)
         {
             User element = context.Users.FirstOrDefault(rec => rec.FIO == model.FIO || rec.Login == model.Login);
@@ -97,6 +98,7 @@ namespace Controllers
             element.Authentication = model.Authentication;
             context.SaveChanges();
         }
+
         public void ActivateAccount(User model)
         {
             User element = context.Users.FirstOrDefault(rec => rec.Id == model.Id);

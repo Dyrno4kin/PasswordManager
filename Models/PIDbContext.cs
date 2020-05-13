@@ -13,7 +13,9 @@ namespace Models
            System.Data.Entity.SqlServer.SqlProviderServices.Instance;
         }
         public DbSet<Account> Accounts { get; set; }
+
         public DbSet<User> Users { get; set; }
+
         public DbSet<PasswordGroup> PasswordGroups { set; get; }
     }
 }

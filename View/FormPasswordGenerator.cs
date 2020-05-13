@@ -10,7 +10,9 @@ namespace View
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
+
         private readonly PasswordGeneratorController genecatorService;
+
         public FormPasswordGenerator(PasswordGeneratorController genecatorService)
         {
             InitializeComponent();

@@ -2,9 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Controllers
 {
@@ -16,30 +13,6 @@ namespace Controllers
         {
             this.context = context;
         }
-
-        /* public List<PasswordGroup> GetListGroup(int UserId)
-         {
-             List<PasswordGroup> result = context.PasswordGroups.Where(rec => rec.UserId == UserId).Select(rec => new PasswordGroup
-             {
-                 Id = rec.Id,
-                 UserId = rec.UserId,
-                 GroupName = rec.GroupName
-             })
-             .ToList();
-             return result;
-         }*/
-
-       /* public List<PasswordGroup> GetListCustomer(int UserId)
-        {
-            List<PasswordGroup> result = context.PasswordGroups.Where(rec => rec.UserId == UserId).Select(rec => new PasswordGroup
-            {
-                Id = rec.Id,
-                GroupName = rec.GroupName
-            })
-            .ToList();
-            return result;
-        } */
-
 
         public List<PasswordGroup> GetListGroup(int UserId)
         {

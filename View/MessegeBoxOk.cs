@@ -11,11 +11,13 @@ namespace View
             textBoxMessage.SendToBack();
 
         }
+
         public Image MessageIcon
         {
             get { return pictureBox.Image; }
             set { pictureBox.Image = value; }
         }
+
         public string Message
         {
             get { return textBoxMessage.Text; }
@@ -27,6 +29,5 @@ namespace View
         {
             set { textBoxMessage.Location = new Point(100, value); }
         }
-
     }
 }

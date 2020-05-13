@@ -11,15 +11,21 @@ namespace View
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
+
         public int groupId { set; get; }
+
         public int Id { set { id = value; } }
+
         private int? id;
+
         private readonly AccountController accountService;
+
         public FormAccount(AccountController accountService)
         {
             InitializeComponent();
             this.accountService = accountService;
         }
+
         private void FormAccount_Load(object sender, EventArgs e)
         {
             labelUpInfo.Text = "Add Account";

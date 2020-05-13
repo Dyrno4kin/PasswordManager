@@ -19,7 +19,6 @@ namespace Controllers
                 m.Body = text;
                 m.SubjectEncoding = System.Text.Encoding.UTF8;
                 m.BodyEncoding = System.Text.Encoding.UTF8;
-               // m.Attachments.Add(new Attachment(attachmentPath));
                 smtpClient = new SmtpClient("smtp.gmail.com", 587);
                 smtpClient.UseDefaultCredentials = false;
                 smtpClient.EnableSsl = true;

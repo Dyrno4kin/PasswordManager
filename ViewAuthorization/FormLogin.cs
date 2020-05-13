@@ -12,12 +12,15 @@ namespace ViewAuthorization
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
+
         private readonly UserController userService;
+
         public FormLogin(UserController userService)
         {
             InitializeComponent();
             this.userService = userService;
         }
+
         private void FormLogin_Load(object sender, EventArgs e)
         {
             textBoxPass.UseSystemPasswordChar = false;

@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountController.cs" />
+    <Compile Include="EncryptionController.cs" />
     <Compile Include="GroupController.cs" />
     <Compile Include="PasswordGeneratorController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

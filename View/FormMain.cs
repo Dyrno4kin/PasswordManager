@@ -12,10 +12,15 @@ namespace View
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
-        public int id { get; set; }
+
         private readonly GroupController groupService;
+
         private readonly AccountController accountService;
+
+        public int id { get; set; }
+
         public int groupId { get; set; }
+
         public FormMain(GroupController groupService, AccountController accountService)
         {
             InitializeComponent();
@@ -23,10 +28,10 @@ namespace View
             this.accountService = accountService;
             menuStrip1.Renderer = new ToolStripProfessionalRenderer(new Cols());
         }
+
         private void FormMain_Load(object sender, EventArgs e)
         {
             LoadGroups();
-            LoadAccounts(Convert.ToInt32(dataGridViewGroups.SelectedRows[0].Cells[0].Value));
         }
 
         #region UpPanel

@@ -11,7 +11,9 @@ namespace ViewAuthorization
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
+
         private readonly UserController userController;
+
         public FormFogotPassword(UserController userController)
         {
             InitializeComponent();

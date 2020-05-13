@@ -13,6 +13,7 @@ namespace ViewAuthorization
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
+
         private readonly UserController userService;
 
         public FormRegistration(UserController userService)

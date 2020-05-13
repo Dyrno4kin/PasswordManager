@@ -11,14 +11,22 @@ namespace ViewAuthorization
     public partial class FormVerification : Form
     {
         public string Email { get; set; }
+
         public string FIO { get; set; }
+
         public int Id { get; set; }
+
         public bool Registration { get; set; }
+
         int emailCode;
+
         [Dependency]
         public new IUnityContainer Container { get; set; }
+
         private readonly SendEmailController sendEmailService;
+
         private readonly UserController userService;
+
         public FormVerification(SendEmailController sendEmailService, UserController userService)
         {
             InitializeComponent();

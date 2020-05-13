@@ -12,8 +12,11 @@ namespace View
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
+
         private readonly UserController userService;
+
         public int id { get; set; }
+
         public FormEditUser(UserController userService)
         {
             InitializeComponent();

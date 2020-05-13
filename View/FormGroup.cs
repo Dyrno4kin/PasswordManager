@@ -11,9 +11,13 @@ namespace View
     {
         [Dependency]
         public new IUnityContainer Container { get; set; }
+
         public int userId { set; get; }
+
         public int Id { set { id = value; } }
+
         private int? id;
+
         private readonly GroupController groupService;
 
         public FormGroup(GroupController groupService)
@@ -21,6 +25,7 @@ namespace View
             InitializeComponent();
             this.groupService = groupService;
         }
+
         private void FormGroup_Load(object sender, EventArgs e)
         {
             labelGroupUp.Text = "Add User";
@@ -31,7 +36,6 @@ namespace View
                 PasswordGroup passwordGroup = groupService.GetElement(id.Value);
                 textBoxGroupName.Text = passwordGroup.GroupName;
             }
-
         }
 
         #region UpPanel
