@@ -17,15 +17,19 @@ namespace View
 
         private readonly AccountController accountService;
 
+        private readonly EncryptionController encryptionService;
+
         public int id { get; set; }
 
         public int groupId { get; set; }
+        public string UserLogin { get; set; }
 
-        public FormMain(GroupController groupService, AccountController accountService)
+        public FormMain(GroupController groupService, AccountController accountService, EncryptionController encryptionService)
         {
             InitializeComponent();
             this.groupService = groupService;
             this.accountService = accountService;
+            this.encryptionService = encryptionService;
             menuStrip1.Renderer = new ToolStripProfessionalRenderer(new Cols());
         }
 
@@ -138,17 +142,16 @@ namespace View
         {
             try
             {
+                dataGridViewAccounts.Rows.Clear();
+
                 List<Account> list = accountService.GetListAccount(GroupId);
-                if (list != null)
+                foreach (Account s in list)
                 {
-                    dataGridViewAccounts.DataSource = list;
-                    dataGridViewAccounts.Columns[0].Visible = false;
-                    dataGridViewAccounts.Columns[3].Visible = false;
-                    dataGridViewAccounts.Columns[4].Visible = false;
-                    dataGridViewAccounts.Columns[5].Visible = false;
-                    dataGridViewAccounts.Columns[6].Visible = false;
-                    dataGridViewAccounts.Columns[7].Visible = false;
+                    string NameAccount = encryptionService.Decrypt(Convert.ToString(s.NameAccount), "Login");
+                    string url = encryptionService.Decrypt(Convert.ToString(s.URL), "Login");
+                    dataGridViewAccounts.Rows.Add(s.Id, NameAccount, url);
                 }
+                dataGridViewAccounts.Columns[0].Visible = false;
             }
             catch (Exception ex)
             {

@@ -60,5 +60,10 @@ namespace View
             Clipboard.SetText(textBoxPass.Text);
             toolTip1.Show("Пароль скопирован в буфер обмена", buttonGenerate);
         }
+
+        public string returnPassword()
+        {
+            return textBoxPass.Text;
+        }
     }
 }

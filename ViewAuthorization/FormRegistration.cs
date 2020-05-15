@@ -113,6 +113,7 @@ namespace ViewAuthorization
         {
             var form = Container.Resolve<FormPasswordGenerator>();
             form.ShowDialog();
+            textBoxPass.Text = form.returnPassword();
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)

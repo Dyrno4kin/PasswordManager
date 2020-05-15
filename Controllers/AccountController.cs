@@ -9,9 +9,12 @@ namespace Controllers
     {
         private PIDbContext context;
 
-        public AccountController(PIDbContext context)
+        private readonly EncryptionController encryptionService;
+
+        public AccountController(PIDbContext context, EncryptionController encryptionService)
         {
             this.context = context;
+            this.encryptionService = encryptionService;
         }
 
         public List<Account> GetListAccount(int GroupId)
@@ -19,7 +22,7 @@ namespace Controllers
             var dt = context.Database.SqlQuery<Account>("select Id, NameAccount, URL, LoginAccount, PasswordAccount, Comment, PasswordGroupId from Accounts where PasswordGroupId =" + GroupId);
             List<Account> result = dt.ToList();
             return result;
-        }
+        } 
 
         public Account GetElement(int id)
         {
@@ -29,11 +32,11 @@ namespace Controllers
                 return new Account
                 {
                     Id = element.Id,
-                    NameAccount = element.NameAccount,
-                    LoginAccount = element.LoginAccount,
-                    PasswordAccount = element.PasswordAccount,
-                    URL = element.URL,
-                    Comment = element.Comment,
+                    NameAccount = encryptionService.Decrypt(element.NameAccount, "Login"),
+                    LoginAccount = encryptionService.Decrypt(element.LoginAccount, "Login"),
+                    PasswordAccount = encryptionService.Decrypt(element.PasswordAccount, "Login"),
+                    URL = encryptionService.Decrypt(element.URL, "Login"),
+                    Comment = encryptionService.Decrypt(element.Comment, "Login"),
                     PasswordGroupId = element.PasswordGroupId
                 };
             }
@@ -42,18 +45,19 @@ namespace Controllers
 
         public void AddElement(Account model)
         {
-            Account element = context.Accounts.FirstOrDefault(rec => rec.NameAccount == model.NameAccount);
+            string nameAccount = encryptionService.Encrypt(model.NameAccount, "Login");
+            Account element = context.Accounts.FirstOrDefault(rec => rec.NameAccount == nameAccount);
             if (element != null)
             {
                 throw new Exception("Уже есть такая учетная запись");
             }
             element = new Account
             {
-                NameAccount = model.NameAccount,
-                LoginAccount = model.LoginAccount,
-                PasswordAccount = model.PasswordAccount,
-                URL = model.URL,
-                Comment = model.Comment,
+                NameAccount = encryptionService.Encrypt(model.NameAccount, "Login"),
+                LoginAccount = encryptionService.Encrypt(model.LoginAccount, "Login"),
+                PasswordAccount = encryptionService.Encrypt(model.PasswordAccount, "Login"),
+                URL = encryptionService.Encrypt(model.URL, "Login"),
+                Comment = encryptionService.Encrypt(model.Comment, "Login"),
                 PasswordGroupId = model.PasswordGroupId
             };
             context.Accounts.Add(element);
@@ -62,8 +66,9 @@ namespace Controllers
 
         public void UpdElement(Account model)
         {
+            string nameAccount = encryptionService.Encrypt(model.NameAccount, "Login");
             Account element = context.Accounts.FirstOrDefault(rec => rec.NameAccount ==
-          model.NameAccount && rec.Id != model.Id);
+            nameAccount && rec.Id != model.Id);
             if (element != null)
             {
                 throw new Exception("Уже есть такая учетная запись");
@@ -73,11 +78,11 @@ namespace Controllers
             {
                 throw new Exception("Элемент не найден");
             }
-            element.NameAccount = model.NameAccount;
-            element.LoginAccount = model.LoginAccount;
-            element.PasswordAccount = model.PasswordAccount;
-            element.URL = model.URL;
-            element.Comment = model.Comment;
+            element.NameAccount = encryptionService.Encrypt(model.NameAccount, "Login");
+            element.LoginAccount = encryptionService.Encrypt(model.LoginAccount, "Login");
+            element.PasswordAccount = encryptionService.Encrypt(model.PasswordAccount, "Login");
+            element.URL = encryptionService.Encrypt(model.URL, "Login");
+            element.Comment = encryptionService.Encrypt(model.Comment, "Login");
             element.PasswordGroupId = model.PasswordGroupId;
             context.SaveChanges();
         }

@@ -147,6 +147,7 @@ namespace View
         {
             var form = Container.Resolve<FormPasswordGenerator>();
             form.ShowDialog();
+            textBoxPass.Text = form.returnPassword();
         }
 
         private void buttonSave_Click(object sender, EventArgs e)

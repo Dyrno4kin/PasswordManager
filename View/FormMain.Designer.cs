@@ -51,6 +51,9 @@
             this.buttonAddGroup = new System.Windows.Forms.Button();
             this.dataGridViewGroups = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.URL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain.SuspendLayout();
             this.panelCap.SuspendLayout();
@@ -230,6 +233,10 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewAccounts.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewAccounts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewAccounts.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.NameAccount,
+            this.URL});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 10.18868F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -404,6 +411,27 @@
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            // 
+            // NameAccount
+            // 
+            this.NameAccount.HeaderText = "Name Account";
+            this.NameAccount.MinimumWidth = 6;
+            this.NameAccount.Name = "NameAccount";
+            this.NameAccount.ReadOnly = true;
+            // 
+            // URL
+            // 
+            this.URL.HeaderText = "URL";
+            this.URL.MinimumWidth = 6;
+            this.URL.Name = "URL";
+            this.URL.ReadOnly = true;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,5 +478,8 @@
         private System.Windows.Forms.Panel panelCap;
         private System.Windows.Forms.Label labelSkip;
         private System.Windows.Forms.Label labelExit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NameAccount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn URL;
     }
 }
