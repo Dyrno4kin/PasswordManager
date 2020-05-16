@@ -30,20 +30,20 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.panelMain = new System.Windows.Forms.Panel();
+            this.buttonPassChar = new System.Windows.Forms.Button();
             this.textBoxPass = new System.Windows.Forms.TextBox();
             this.buttonFogot = new System.Windows.Forms.Button();
             this.panelCap = new System.Windows.Forms.Panel();
-            this.buttonSignIn = new System.Windows.Forms.Button();
-            this.buttonRegister = new System.Windows.Forms.Button();
-            this.panelLine2 = new System.Windows.Forms.Panel();
-            this.panelLine1 = new System.Windows.Forms.Panel();
-            this.textBoxLogin = new System.Windows.Forms.TextBox();
-            this.buttonPassChar = new System.Windows.Forms.Button();
             this.labelSkip = new System.Windows.Forms.Label();
             this.labelExit = new System.Windows.Forms.Label();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
+            this.buttonSignIn = new System.Windows.Forms.Button();
+            this.buttonRegister = new System.Windows.Forms.Button();
+            this.panelLine2 = new System.Windows.Forms.Panel();
             this.pictureBoxPass = new System.Windows.Forms.PictureBox();
+            this.panelLine1 = new System.Windows.Forms.Panel();
             this.pictureBoxLogin = new System.Windows.Forms.PictureBox();
+            this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.panelMain.SuspendLayout();
             this.panelCap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -72,6 +72,22 @@
             this.panelMain.Size = new System.Drawing.Size(424, 550);
             this.panelMain.TabIndex = 0;
             // 
+            // buttonPassChar
+            // 
+            this.buttonPassChar.BackgroundImage = global::ViewAuthorization.Properties.Resources.eye;
+            this.buttonPassChar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonPassChar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonPassChar.FlatAppearance.BorderSize = 0;
+            this.buttonPassChar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonPassChar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonPassChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPassChar.Location = new System.Drawing.Point(320, 294);
+            this.buttonPassChar.Name = "buttonPassChar";
+            this.buttonPassChar.Size = new System.Drawing.Size(28, 28);
+            this.buttonPassChar.TabIndex = 1017;
+            this.buttonPassChar.UseVisualStyleBackColor = false;
+            this.buttonPassChar.Click += new System.EventHandler(this.buttonPassChar_Click);
+            // 
             // textBoxPass
             // 
             this.textBoxPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -80,6 +96,7 @@
             this.textBoxPass.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxPass.ForeColor = System.Drawing.Color.White;
             this.textBoxPass.Location = new System.Drawing.Point(133, 303);
+            this.textBoxPass.MaxLength = 30;
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(219, 21);
             this.textBoxPass.TabIndex = 3;
@@ -101,7 +118,7 @@
             this.buttonFogot.Name = "buttonFogot";
             this.buttonFogot.Size = new System.Drawing.Size(270, 24);
             this.buttonFogot.TabIndex = 0;
-            this.buttonFogot.Text = "Fogot password?";
+            this.buttonFogot.Text = "Forgot password?";
             this.buttonFogot.UseVisualStyleBackColor = true;
             this.buttonFogot.Click += new System.EventHandler(this.buttonFogot_Click);
             // 
@@ -116,80 +133,6 @@
             this.panelCap.TabIndex = 0;
             this.panelCap.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelCap_MouseDown);
             this.panelCap.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelCap_MouseMove);
-            // 
-            // buttonSignIn
-            // 
-            this.buttonSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(177)))), ((int)(((byte)(146)))));
-            this.buttonSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSignIn.Font = new System.Drawing.Font("Arial", 14.86792F);
-            this.buttonSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.buttonSignIn.Location = new System.Drawing.Point(79, 373);
-            this.buttonSignIn.Name = "buttonSignIn";
-            this.buttonSignIn.Size = new System.Drawing.Size(270, 48);
-            this.buttonSignIn.TabIndex = 4;
-            this.buttonSignIn.Text = "Sign In";
-            this.buttonSignIn.UseVisualStyleBackColor = false;
-            this.buttonSignIn.Click += new System.EventHandler(this.buttonSignIn_Click);
-            // 
-            // buttonRegister
-            // 
-            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegister.Font = new System.Drawing.Font("Arial", 14.86792F);
-            this.buttonRegister.ForeColor = System.Drawing.Color.White;
-            this.buttonRegister.Location = new System.Drawing.Point(79, 440);
-            this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(270, 48);
-            this.buttonRegister.TabIndex = 5;
-            this.buttonRegister.Text = "Sign Up";
-            this.buttonRegister.UseVisualStyleBackColor = true;
-            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
-            // 
-            // panelLine2
-            // 
-            this.panelLine2.BackColor = System.Drawing.Color.White;
-            this.panelLine2.Location = new System.Drawing.Point(80, 330);
-            this.panelLine2.Name = "panelLine2";
-            this.panelLine2.Size = new System.Drawing.Size(270, 1);
-            this.panelLine2.TabIndex = 0;
-            // 
-            // panelLine1
-            // 
-            this.panelLine1.BackColor = System.Drawing.Color.White;
-            this.panelLine1.Location = new System.Drawing.Point(80, 249);
-            this.panelLine1.Name = "panelLine1";
-            this.panelLine1.Size = new System.Drawing.Size(270, 1);
-            this.panelLine1.TabIndex = 1;
-            // 
-            // textBoxLogin
-            // 
-            this.textBoxLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.textBoxLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxLogin.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBoxLogin.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBoxLogin.ForeColor = System.Drawing.Color.White;
-            this.textBoxLogin.Location = new System.Drawing.Point(131, 221);
-            this.textBoxLogin.Name = "textBoxLogin";
-            this.textBoxLogin.Size = new System.Drawing.Size(219, 21);
-            this.textBoxLogin.TabIndex = 2;
-            this.textBoxLogin.Text = "Login";
-            this.textBoxLogin.Enter += new System.EventHandler(this.textBoxLogin_Enter);
-            this.textBoxLogin.Leave += new System.EventHandler(this.textBoxLogin_Leave);
-            // 
-            // buttonPassChar
-            // 
-            this.buttonPassChar.BackgroundImage = global::ViewAuthorization.Properties.Resources.eye;
-            this.buttonPassChar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonPassChar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.buttonPassChar.FlatAppearance.BorderSize = 0;
-            this.buttonPassChar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.buttonPassChar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.buttonPassChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPassChar.Location = new System.Drawing.Point(320, 294);
-            this.buttonPassChar.Name = "buttonPassChar";
-            this.buttonPassChar.Size = new System.Drawing.Size(28, 28);
-            this.buttonPassChar.TabIndex = 1017;
-            this.buttonPassChar.UseVisualStyleBackColor = false;
-            this.buttonPassChar.Click += new System.EventHandler(this.buttonPassChar_Click);
             // 
             // labelSkip
             // 
@@ -229,6 +172,41 @@
             this.pictureBoxLogo.TabIndex = 7;
             this.pictureBoxLogo.TabStop = false;
             // 
+            // buttonSignIn
+            // 
+            this.buttonSignIn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(177)))), ((int)(((byte)(146)))));
+            this.buttonSignIn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSignIn.Font = new System.Drawing.Font("Arial", 14.86792F);
+            this.buttonSignIn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonSignIn.Location = new System.Drawing.Point(79, 373);
+            this.buttonSignIn.Name = "buttonSignIn";
+            this.buttonSignIn.Size = new System.Drawing.Size(270, 48);
+            this.buttonSignIn.TabIndex = 4;
+            this.buttonSignIn.Text = "Sign In";
+            this.buttonSignIn.UseVisualStyleBackColor = false;
+            this.buttonSignIn.Click += new System.EventHandler(this.buttonSignIn_Click);
+            // 
+            // buttonRegister
+            // 
+            this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRegister.Font = new System.Drawing.Font("Arial", 14.86792F);
+            this.buttonRegister.ForeColor = System.Drawing.Color.White;
+            this.buttonRegister.Location = new System.Drawing.Point(79, 440);
+            this.buttonRegister.Name = "buttonRegister";
+            this.buttonRegister.Size = new System.Drawing.Size(270, 48);
+            this.buttonRegister.TabIndex = 5;
+            this.buttonRegister.Text = "Sign Up";
+            this.buttonRegister.UseVisualStyleBackColor = true;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
+            // 
+            // panelLine2
+            // 
+            this.panelLine2.BackColor = System.Drawing.Color.White;
+            this.panelLine2.Location = new System.Drawing.Point(80, 330);
+            this.panelLine2.Name = "panelLine2";
+            this.panelLine2.Size = new System.Drawing.Size(270, 1);
+            this.panelLine2.TabIndex = 0;
+            // 
             // pictureBoxPass
             // 
             this.pictureBoxPass.Image = global::ViewAuthorization.Properties.Resources.pass;
@@ -239,6 +217,14 @@
             this.pictureBoxPass.TabIndex = 4;
             this.pictureBoxPass.TabStop = false;
             // 
+            // panelLine1
+            // 
+            this.panelLine1.BackColor = System.Drawing.Color.White;
+            this.panelLine1.Location = new System.Drawing.Point(80, 249);
+            this.panelLine1.Name = "panelLine1";
+            this.panelLine1.Size = new System.Drawing.Size(270, 1);
+            this.panelLine1.TabIndex = 1;
+            // 
             // pictureBoxLogin
             // 
             this.pictureBoxLogin.Image = global::ViewAuthorization.Properties.Resources.log;
@@ -248,6 +234,22 @@
             this.pictureBoxLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxLogin.TabIndex = 1;
             this.pictureBoxLogin.TabStop = false;
+            // 
+            // textBoxLogin
+            // 
+            this.textBoxLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.textBoxLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxLogin.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBoxLogin.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.textBoxLogin.ForeColor = System.Drawing.Color.White;
+            this.textBoxLogin.Location = new System.Drawing.Point(131, 221);
+            this.textBoxLogin.MaxLength = 25;
+            this.textBoxLogin.Name = "textBoxLogin";
+            this.textBoxLogin.Size = new System.Drawing.Size(219, 21);
+            this.textBoxLogin.TabIndex = 2;
+            this.textBoxLogin.Text = "Login";
+            this.textBoxLogin.Enter += new System.EventHandler(this.textBoxLogin_Enter);
+            this.textBoxLogin.Leave += new System.EventHandler(this.textBoxLogin_Leave);
             // 
             // FormLogin
             // 

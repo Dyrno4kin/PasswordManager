@@ -156,6 +156,7 @@
             this.textBoxComment.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxComment.ForeColor = System.Drawing.Color.White;
             this.textBoxComment.Location = new System.Drawing.Point(170, 284);
+            this.textBoxComment.MaxLength = 100;
             this.textBoxComment.Name = "textBoxComment";
             this.textBoxComment.Size = new System.Drawing.Size(375, 21);
             this.textBoxComment.TabIndex = 30;
@@ -179,6 +180,7 @@
             this.textBoxLink.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLink.ForeColor = System.Drawing.Color.White;
             this.textBoxLink.Location = new System.Drawing.Point(170, 227);
+            this.textBoxLink.MaxLength = 80;
             this.textBoxLink.Name = "textBoxLink";
             this.textBoxLink.Size = new System.Drawing.Size(375, 21);
             this.textBoxLink.TabIndex = 29;
@@ -228,6 +230,7 @@
             this.textNameAccount.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textNameAccount.ForeColor = System.Drawing.Color.White;
             this.textNameAccount.Location = new System.Drawing.Point(172, 47);
+            this.textNameAccount.MaxLength = 40;
             this.textNameAccount.Name = "textNameAccount";
             this.textNameAccount.Size = new System.Drawing.Size(375, 21);
             this.textNameAccount.TabIndex = 18;
@@ -265,6 +268,7 @@
             this.textBoxPass.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxPass.ForeColor = System.Drawing.Color.White;
             this.textBoxPass.Location = new System.Drawing.Point(172, 166);
+            this.textBoxPass.MaxLength = 30;
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(375, 21);
             this.textBoxPass.TabIndex = 21;
@@ -288,6 +292,7 @@
             this.textBoxLogin.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLogin.ForeColor = System.Drawing.Color.White;
             this.textBoxLogin.Location = new System.Drawing.Point(172, 106);
+            this.textBoxLogin.MaxLength = 40;
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(375, 21);
             this.textBoxLogin.TabIndex = 19;

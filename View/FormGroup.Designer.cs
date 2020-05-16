@@ -108,6 +108,7 @@
             this.textBoxGroupName.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxGroupName.ForeColor = System.Drawing.Color.White;
             this.textBoxGroupName.Location = new System.Drawing.Point(139, 56);
+            this.textBoxGroupName.MaxLength = 30;
             this.textBoxGroupName.Name = "textBoxGroupName";
             this.textBoxGroupName.Size = new System.Drawing.Size(300, 21);
             this.textBoxGroupName.TabIndex = 19;

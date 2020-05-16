@@ -121,13 +121,13 @@ namespace Controllers
         public void ResetPassword(string login, string email)
         {
             Random rand = new Random();
-            string log = encryptionService.Decrypt(login, "Login");
-            string mail = encryptionService.Decrypt(email, "Login");
+            string log = encryptionService.Encrypt(login, "Login");
+            string mail = encryptionService.Encrypt(email, "Login");
             string pass = passwordGeneratorController.generatePassword(true, true, true, false, rand.Next(8, 25));
             User element = context.Users.FirstOrDefault(rec => rec.Login == log && rec.Email == mail);
             if (element != null)
             {
-                sendEmailController.SendEmail(element.Email, "Восстановление пароля", "Ваш новый пароль: " + pass);
+                sendEmailController.SendEmail(email, "Восстановление пароля", "Ваш новый пароль: " + pass);
                 element.Password = encryptionService.Encrypt(pass, "Login");
                 context.SaveChanges();
             }

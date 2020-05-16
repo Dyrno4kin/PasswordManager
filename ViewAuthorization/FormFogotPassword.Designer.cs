@@ -129,6 +129,7 @@
             this.textBoxEmail.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxEmail.ForeColor = System.Drawing.Color.White;
             this.textBoxEmail.Location = new System.Drawing.Point(98, 151);
+            this.textBoxEmail.MaxLength = 40;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(218, 21);
             this.textBoxEmail.TabIndex = 3;
@@ -176,6 +177,7 @@
             this.textBoxLogin.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLogin.ForeColor = System.Drawing.Color.White;
             this.textBoxLogin.Location = new System.Drawing.Point(98, 68);
+            this.textBoxLogin.MaxLength = 25;
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(219, 21);
             this.textBoxLogin.TabIndex = 2;

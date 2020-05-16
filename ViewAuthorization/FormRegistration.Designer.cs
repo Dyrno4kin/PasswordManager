@@ -124,6 +124,7 @@
             this.textBoxFIO.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxFIO.ForeColor = System.Drawing.Color.White;
             this.textBoxFIO.Location = new System.Drawing.Point(136, 200);
+            this.textBoxFIO.MaxLength = 30;
             this.textBoxFIO.Name = "textBoxFIO";
             this.textBoxFIO.Size = new System.Drawing.Size(219, 21);
             this.textBoxFIO.TabIndex = 2;
@@ -157,6 +158,7 @@
             this.textBoxEmail.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxEmail.ForeColor = System.Drawing.Color.White;
             this.textBoxEmail.Location = new System.Drawing.Point(131, 431);
+            this.textBoxEmail.MaxLength = 40;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(218, 21);
             this.textBoxEmail.TabIndex = 6;
@@ -254,6 +256,7 @@
             this.textBoxPass.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxPass.ForeColor = System.Drawing.Color.White;
             this.textBoxPass.Location = new System.Drawing.Point(131, 361);
+            this.textBoxPass.MaxLength = 30;
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(218, 21);
             this.textBoxPass.TabIndex = 4;
@@ -287,6 +290,7 @@
             this.textBoxLogin.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLogin.ForeColor = System.Drawing.Color.White;
             this.textBoxLogin.Location = new System.Drawing.Point(131, 280);
+            this.textBoxLogin.MaxLength = 25;
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(219, 21);
             this.textBoxLogin.TabIndex = 3;

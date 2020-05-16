@@ -200,9 +200,8 @@ namespace View
             }
             catch (Exception)
             {
-                MyMessageBox.ShowMessage("Такая учетная запись уже сущетвует", "Message", 60, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MyMessageBox.ShowMessage("Такая учетная запись уже сущетвует", "Message", 60, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
     }
 }

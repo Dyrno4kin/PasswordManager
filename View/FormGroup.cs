@@ -28,11 +28,11 @@ namespace View
 
         private void FormGroup_Load(object sender, EventArgs e)
         {
-            labelGroupUp.Text = "Add User";
+            labelGroupUp.Text = "Add Group";
             textBoxGroupName.Text = "Group name";
             if (id.HasValue)
             {
-                labelGroupUp.Text = "Edit User";
+                labelGroupUp.Text = "Edit Group";
                 PasswordGroup passwordGroup = groupService.GetElement(id.Value);
                 textBoxGroupName.Text = passwordGroup.GroupName;
             }
@@ -88,7 +88,7 @@ namespace View
         {
             if (textBoxGroupName.Text == "Group name")
             {
-                MyMessageBox.ShowMessage("Заполните название группы", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MyMessageBox.ShowMessage("Заполните название группы", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
             try
@@ -116,7 +116,7 @@ namespace View
             }
             catch (Exception)
             {
-                MyMessageBox.ShowMessage("Такая группа уже существует", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MyMessageBox.ShowMessage("Такая группа уже существует", "Message",60, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }

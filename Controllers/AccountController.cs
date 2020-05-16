@@ -46,7 +46,7 @@ namespace Controllers
         public void AddElement(Account model)
         {
             string nameAccount = encryptionService.Encrypt(model.NameAccount, "Login");
-            Account element = context.Accounts.FirstOrDefault(rec => rec.NameAccount == nameAccount);
+            Account element = context.Accounts.FirstOrDefault(rec => rec.NameAccount == nameAccount && rec.PasswordGroupId == model.PasswordGroupId);
             if (element != null)
             {
                 throw new Exception("Уже есть такая учетная запись");

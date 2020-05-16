@@ -155,6 +155,7 @@
             this.textBoxCode.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxCode.ForeColor = System.Drawing.Color.White;
             this.textBoxCode.Location = new System.Drawing.Point(98, 86);
+            this.textBoxCode.MaxLength = 4;
             this.textBoxCode.Name = "textBoxCode";
             this.textBoxCode.Size = new System.Drawing.Size(219, 21);
             this.textBoxCode.TabIndex = 2;

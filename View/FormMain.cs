@@ -36,6 +36,7 @@ namespace View
         private void FormMain_Load(object sender, EventArgs e)
         {
             LoadGroups();
+            dataGridViewAccounts.Columns[0].Visible = false;
         }
 
         #region UpPanel
@@ -143,7 +144,8 @@ namespace View
             try
             {
                 dataGridViewAccounts.Rows.Clear();
-
+                URL.LinkColor = Color.White;
+                URL.VisitedLinkColor = Color.White;
                 List<Account> list = accountService.GetListAccount(GroupId);
                 foreach (Account s in list)
                 {
@@ -214,6 +216,20 @@ namespace View
                 }
             }
         }
-        #endregion
+
+        private void dataGridViewAccounts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dataGridViewAccounts.CurrentCell.ColumnIndex == 2)
+                    System.Diagnostics.Process.Start(dataGridViewAccounts.CurrentCell.Value.ToString());
+            }
+            catch
+            {
+                MyMessageBox.ShowMessage("Некорректная ссылка", "Message", 60, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+        }
+        #endregion    
     }
 }

@@ -53,7 +53,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameAccount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.URL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.URL = new System.Windows.Forms.DataGridViewLinkColumn();
             менюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelMain.SuspendLayout();
             this.panelCap.SuspendLayout();
@@ -270,6 +270,7 @@
             this.dataGridViewAccounts.ShowRowErrors = false;
             this.dataGridViewAccounts.Size = new System.Drawing.Size(504, 372);
             this.dataGridViewAccounts.TabIndex = 0;
+            this.dataGridViewAccounts.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAccounts_CellClick);
             // 
             // groupBox
             // 
@@ -431,6 +432,8 @@
             this.URL.MinimumWidth = 6;
             this.URL.Name = "URL";
             this.URL.ReadOnly = true;
+            this.URL.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.URL.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // FormMain
             // 
@@ -480,6 +483,6 @@
         private System.Windows.Forms.Label labelExit;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn NameAccount;
-        private System.Windows.Forms.DataGridViewTextBoxColumn URL;
+        private System.Windows.Forms.DataGridViewLinkColumn URL;
     }
 }

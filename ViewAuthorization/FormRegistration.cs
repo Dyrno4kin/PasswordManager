@@ -165,9 +165,9 @@ namespace ViewAuthorization
                     form.ShowDialog();
                     Close();
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
-                    MessageBox.Show(ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MyMessageBox.ShowMessage("Уже есть пользователь с таким логином и ФИО", "Message", 60, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             else

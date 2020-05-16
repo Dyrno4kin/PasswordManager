@@ -29,34 +29,34 @@
         private void InitializeComponent()
         {
             this.panelMain = new System.Windows.Forms.Panel();
+            this.buttonPassChar = new System.Windows.Forms.Button();
             this.twoStepVerificationBox = new System.Windows.Forms.CheckBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.buttonGeneratePassword = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBoxFIO = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBoxEmail = new System.Windows.Forms.PictureBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
             this.panelLine2 = new System.Windows.Forms.Panel();
+            this.pictureBoxPass = new System.Windows.Forms.PictureBox();
             this.textBoxPass = new System.Windows.Forms.TextBox();
             this.panelLine1 = new System.Windows.Forms.Panel();
+            this.pictureBoxLogin = new System.Windows.Forms.PictureBox();
             this.textBoxLogin = new System.Windows.Forms.TextBox();
             this.panelCap = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonPassChar = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxEmail = new System.Windows.Forms.PictureBox();
-            this.pictureBoxPass = new System.Windows.Forms.PictureBox();
-            this.pictureBoxLogin = new System.Windows.Forms.PictureBox();
             this.labelSkip = new System.Windows.Forms.Label();
             this.labelExit = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
-            this.panelCap.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPass)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).BeginInit();
+            this.panelCap.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMain
@@ -88,6 +88,23 @@
             this.panelMain.Size = new System.Drawing.Size(573, 440);
             this.panelMain.TabIndex = 0;
             // 
+            // buttonPassChar
+            // 
+            this.buttonPassChar.BackgroundImage = global::View.Properties.Resources.eye;
+            this.buttonPassChar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.buttonPassChar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonPassChar.FlatAppearance.BorderSize = 0;
+            this.buttonPassChar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonPassChar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
+            this.buttonPassChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonPassChar.Image = global::View.Properties.Resources.eye;
+            this.buttonPassChar.Location = new System.Drawing.Point(510, 214);
+            this.buttonPassChar.Name = "buttonPassChar";
+            this.buttonPassChar.Size = new System.Drawing.Size(28, 28);
+            this.buttonPassChar.TabIndex = 1016;
+            this.buttonPassChar.UseVisualStyleBackColor = false;
+            this.buttonPassChar.Click += new System.EventHandler(this.buttonPassChar_Click);
+            // 
             // twoStepVerificationBox
             // 
             this.twoStepVerificationBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -107,6 +124,15 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(375, 1);
             this.panel4.TabIndex = 28;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::View.Properties.Resources.user;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(21, 37);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(128, 128);
+            this.panel3.TabIndex = 27;
             // 
             // buttonGeneratePassword
             // 
@@ -133,6 +159,16 @@
             this.panel2.Size = new System.Drawing.Size(375, 1);
             this.panel2.TabIndex = 25;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::View.Properties.Resources.passport;
+            this.pictureBox1.Location = new System.Drawing.Point(167, 38);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(57, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 26;
+            this.pictureBox1.TabStop = false;
+            // 
             // textBoxFIO
             // 
             this.textBoxFIO.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -141,6 +177,7 @@
             this.textBoxFIO.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxFIO.ForeColor = System.Drawing.Color.White;
             this.textBoxFIO.Location = new System.Drawing.Point(224, 67);
+            this.textBoxFIO.MaxLength = 30;
             this.textBoxFIO.Name = "textBoxFIO";
             this.textBoxFIO.Size = new System.Drawing.Size(323, 21);
             this.textBoxFIO.TabIndex = 18;
@@ -156,6 +193,16 @@
             this.panel1.Size = new System.Drawing.Size(375, 1);
             this.panel1.TabIndex = 13;
             // 
+            // pictureBoxEmail
+            // 
+            this.pictureBoxEmail.Image = global::View.Properties.Resources.email;
+            this.pictureBoxEmail.Location = new System.Drawing.Point(172, 272);
+            this.pictureBoxEmail.Name = "pictureBoxEmail";
+            this.pictureBoxEmail.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxEmail.TabIndex = 24;
+            this.pictureBoxEmail.TabStop = false;
+            // 
             // textBoxEmail
             // 
             this.textBoxEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -164,6 +211,7 @@
             this.textBoxEmail.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxEmail.ForeColor = System.Drawing.Color.White;
             this.textBoxEmail.Location = new System.Drawing.Point(223, 289);
+            this.textBoxEmail.MaxLength = 40;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(324, 21);
             this.textBoxEmail.TabIndex = 23;
@@ -193,6 +241,16 @@
             this.panelLine2.Size = new System.Drawing.Size(375, 1);
             this.panelLine2.TabIndex = 14;
             // 
+            // pictureBoxPass
+            // 
+            this.pictureBoxPass.Image = global::View.Properties.Resources.pass;
+            this.pictureBoxPass.Location = new System.Drawing.Point(172, 192);
+            this.pictureBoxPass.Name = "pictureBoxPass";
+            this.pictureBoxPass.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxPass.TabIndex = 20;
+            this.pictureBoxPass.TabStop = false;
+            // 
             // textBoxPass
             // 
             this.textBoxPass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -201,6 +259,7 @@
             this.textBoxPass.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxPass.ForeColor = System.Drawing.Color.White;
             this.textBoxPass.Location = new System.Drawing.Point(223, 218);
+            this.textBoxPass.MaxLength = 30;
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(324, 21);
             this.textBoxPass.TabIndex = 21;
@@ -216,6 +275,16 @@
             this.panelLine1.Size = new System.Drawing.Size(375, 1);
             this.panelLine1.TabIndex = 16;
             // 
+            // pictureBoxLogin
+            // 
+            this.pictureBoxLogin.Image = global::View.Properties.Resources.log;
+            this.pictureBoxLogin.Location = new System.Drawing.Point(172, 115);
+            this.pictureBoxLogin.Name = "pictureBoxLogin";
+            this.pictureBoxLogin.Size = new System.Drawing.Size(48, 48);
+            this.pictureBoxLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxLogin.TabIndex = 17;
+            this.pictureBoxLogin.TabStop = false;
+            // 
             // textBoxLogin
             // 
             this.textBoxLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
@@ -224,6 +293,7 @@
             this.textBoxLogin.Font = new System.Drawing.Font("Arial", 12.22642F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.textBoxLogin.ForeColor = System.Drawing.Color.White;
             this.textBoxLogin.Location = new System.Drawing.Point(223, 139);
+            this.textBoxLogin.MaxLength = 25;
             this.textBoxLogin.Name = "textBoxLogin";
             this.textBoxLogin.Size = new System.Drawing.Size(324, 21);
             this.textBoxLogin.TabIndex = 19;
@@ -255,72 +325,6 @@
             this.label1.Size = new System.Drawing.Size(70, 18);
             this.label1.TabIndex = 11;
             this.label1.Text = "User info";
-            // 
-            // buttonPassChar
-            // 
-            this.buttonPassChar.BackgroundImage = global::View.Properties.Resources.eye;
-            this.buttonPassChar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.buttonPassChar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.buttonPassChar.FlatAppearance.BorderSize = 0;
-            this.buttonPassChar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.buttonPassChar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(49)))));
-            this.buttonPassChar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonPassChar.Image = global::View.Properties.Resources.eye;
-            this.buttonPassChar.Location = new System.Drawing.Point(510, 214);
-            this.buttonPassChar.Name = "buttonPassChar";
-            this.buttonPassChar.Size = new System.Drawing.Size(28, 28);
-            this.buttonPassChar.TabIndex = 1016;
-            this.buttonPassChar.UseVisualStyleBackColor = false;
-            this.buttonPassChar.Click += new System.EventHandler(this.buttonPassChar_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::View.Properties.Resources.user;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(21, 37);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(128, 128);
-            this.panel3.TabIndex = 27;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::View.Properties.Resources.passport;
-            this.pictureBox1.Location = new System.Drawing.Point(167, 38);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(57, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 26;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBoxEmail
-            // 
-            this.pictureBoxEmail.Image = global::View.Properties.Resources.email;
-            this.pictureBoxEmail.Location = new System.Drawing.Point(172, 272);
-            this.pictureBoxEmail.Name = "pictureBoxEmail";
-            this.pictureBoxEmail.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxEmail.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxEmail.TabIndex = 24;
-            this.pictureBoxEmail.TabStop = false;
-            // 
-            // pictureBoxPass
-            // 
-            this.pictureBoxPass.Image = global::View.Properties.Resources.pass;
-            this.pictureBoxPass.Location = new System.Drawing.Point(172, 192);
-            this.pictureBoxPass.Name = "pictureBoxPass";
-            this.pictureBoxPass.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxPass.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxPass.TabIndex = 20;
-            this.pictureBoxPass.TabStop = false;
-            // 
-            // pictureBoxLogin
-            // 
-            this.pictureBoxLogin.Image = global::View.Properties.Resources.log;
-            this.pictureBoxLogin.Location = new System.Drawing.Point(172, 115);
-            this.pictureBoxLogin.Name = "pictureBoxLogin";
-            this.pictureBoxLogin.Size = new System.Drawing.Size(48, 48);
-            this.pictureBoxLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxLogin.TabIndex = 17;
-            this.pictureBoxLogin.TabStop = false;
             // 
             // labelSkip
             // 
@@ -364,12 +368,12 @@
             this.Load += new System.EventHandler(this.FormEditUser_Load);
             this.panelMain.ResumeLayout(false);
             this.panelMain.PerformLayout();
-            this.panelCap.ResumeLayout(false);
-            this.panelCap.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEmail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPass)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogin)).EndInit();
+            this.panelCap.ResumeLayout(false);
+            this.panelCap.PerformLayout();
             this.ResumeLayout(false);
 
         }
